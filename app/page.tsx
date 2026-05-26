@@ -1,11 +1,59 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const services = [
+  {
+    title: "Béton désactivé",
+    desc: "Surface élégante et antidérapante idéale pour les allées, cours et espaces extérieurs. 21 variantes disponibles selon les granulats et finitions.",
+    img: "/beton-desactive-orchidees.jpg",
+  },
+
+  {
+    title: "Béton empreinte",
+    desc: "Moules disponibles : Pavé Queue de Paon, Pavé Londonien, Pavé Fontainebleau, Peau Old Granit, Dalle de Bourgogne et Lattes de bois.",
+    img: "/beton-empreinte.jpg",
+  },
+
+  {
+    title: "Béton coloré",
+    desc: "12 coloris premium disponibles pour personnaliser vos espaces extérieurs.",
+    img: "/beton-colore.jpg",
+  },
+
+  {
+    title: "Béton bouchardé",
+    desc: "Finition texturée haut de gamme avec 7 variantes disponibles.",
+    img: "/beton-boucharde.jpg",
+  },
+
+  {
+    title: "Béton drainant",
+    desc: "Permet une évacuation naturelle de l’eau pour les terrasses et contours de piscine.",
+    img: "/beton-drainant.jpg",
+  },
+
+  {
+    title: "Béton poli",
+    desc: "Finition ultra moderne et lisse avec 4 variantes disponibles.",
+    img: "/hero-beton.png",
+  },
+];
+
+const realisations = [
+  "/beton-desactive-orchidees.jpg",
+  "/beton-empreinte-lattes-de-bois-piscine.jpg",
+  "/beton-empreinte-pave-queue-de-paon-rosas.jpg",
+  "/beton-empreinte-1.jpg",
+];
+
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="relative h-screen flex items-center overflow-hidden">
-        {/* IMAGE DE FOND */}
+
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* IMAGE FOND */}
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
@@ -14,239 +62,281 @@ export default function Home() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* CONTENU */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-3xl">
-            {/* BADGE */}
-            <p className="text-[#C8A96B] uppercase tracking-[0.3em] mb-4 text-sm">
-              Béton décoratif haut de gamme
-            </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-32 pb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl"
+          >
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-[#F3D28B] uppercase tracking-[0.4em] text-sm md:text-base mb-6 font-semibold drop-shadow-[0_0_15px_rgba(243,210,139,0.7)]"
+            >
+              Béton décoratif haut de gamme • Intervention sur toute l'île
+            </motion.p>
 
-            {/* TITRE */}
-            <h1 className="text-white text-5xl md:text-7xl font-semibold leading-tight mb-4">
-              L’Art du Béton Décoratif à La Réunion
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-5xl md:text-8xl font-semibold leading-tight mb-6"
+            >
+              L’Art du Béton
+              <br />à La Réunion
+            </motion.h1>
 
-            {/* SIGNATURE */}
-            <p className="text-[#C8A96B] text-xl md:text-2xl tracking-[0.2em] uppercase mb-8">
-              by LPM et MBZ
-            </p>
+            {/* BY MBZ */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-10"
+            >
+              <span className="text-[#C8A96B] uppercase tracking-[0.3em] text-lg md:text-2xl">
+                by
+              </span>
 
-            {/* DESCRIPTION */}
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10">
-              Béton empreinte, désactivé, drainant, poli et finitions premium
-              pour villas, terrasses et espaces contemporains.
-            </p>
+              <img
+                src="/logo-mbz.jpg"
+                alt="Logo MBZ"
+                className="h-28 md:h-40 w-auto object-contain rounded-xl shadow-2xl"
+              />
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="text-xl md:text-2xl text-gray-200 max-w-3xl leading-relaxed mb-12"
+            >
+              Béton désactivé, empreinte, coloré, bouchardé, drainant et poli
+              avec finitions premium pour villas, piscines, terrasses et espaces
+              contemporains.
+            </motion.p>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <a
-                href="#devis"
-                className="bg-[#C8A96B] hover:bg-[#D6B97A] transition text-black px-8 py-4 rounded-full font-medium text-center"
-              >
-                Demander un devis
-              </a>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="flex flex-col gap-5 mb-12"
+            >
+              <div className="flex flex-col sm:flex-row gap-5">
+                <a
+                  href="#devis"
+                  className="bg-[#C8A96B] hover:bg-[#d8ba7d] transition px-8 py-5 rounded-full text-black font-semibold text-center"
+                >
+                  Demander un devis
+                </a>
 
-              <a
-                href="https://calendly.com/contact-artdubeton/30min"
-                target="_blank"
-                className="border border-white/30 hover:border-[#C8A96B] hover:text-[#C8A96B] transition text-white px-8 py-4 rounded-full font-medium text-center"
-              >
-                Réserver un appel
-              </a>
+                <a
+                  href="https://calendly.com/contact-artdubeton/30min"
+                  target="_blank"
+                  className="border border-white/20 hover:border-[#C8A96B] hover:text-[#C8A96B] transition px-8 py-5 rounded-full text-center"
+                >
+                  Réserver un appel
+                </a>
+              </div>
 
-              <a
-                href="tel:+262692734606"
-                className="border border-white/20 hover:border-white transition text-white px-8 py-4 rounded-full font-medium text-center"
-              >
-                Appeler maintenant
-              </a>
-            </div>
+              {/* CONTACT */}
+              <div className="flex flex-col gap-4 text-lg">
+                <a
+                  href="tel:+262692734606"
+                  className="hover:text-[#C8A96B] transition"
+                >
+                  📞 0692 73 46 06
+                </a>
 
-            {/* CONTACT */}
-            <div className="text-sm text-gray-300 space-y-2">
-              <p className="text-[#C8A96B] uppercase tracking-[0.2em] mb-2">
-                Contact
-              </p>
+                <a
+                  href="tel:+262692698521"
+                  className="hover:text-[#C8A96B] transition"
+                >
+                  📞 0692 69 85 21
+                </a>
 
-              <a
-                href="tel:+262692734606"
-                className="block hover:text-[#C8A96B]"
-              >
-                📞 0692 73 46 06
-              </a>
-
-              <a
-                href="tel:+262692698521"
-                className="block hover:text-[#C8A96B]"
-              >
-                📞 0692 69 85 21
-              </a>
-
-              <a
-                href="mailto:contact@artdubeton.re"
-                className="block hover:text-[#C8A96B]"
-              >
-                ✉️ contact@artdubeton.re
-              </a>
-            </div>
-          </div>
+                <a
+                  href="mailto:contact@artdubeton.re"
+                  className="hover:text-[#C8A96B] transition"
+                >
+                  ✉️ contact@artdubeton.re
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ================= TYPES DE BETON ================= */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-semibold text-center mb-16">
-          Nos types de béton décoratif
-        </h2>
+      {/* ================= REALISATIONS ================= */}
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Béton empreinte",
-              desc: "Imitation pierre, bois ou pavé avec rendu haut de gamme.",
-              img: "/beton-empreinte.jpg",
-            },
-            {
-              title: "Béton désactivé",
-              desc: "Surface antidérapante avec gravillons apparents.",
-              img: "/beton-desactive.jpg",
-            },
-            {
-              title: "Béton drainant",
-              desc: "Permet l’évacuation de l’eau, idéal extérieur.",
-              img: "/beton-drainant.jpg",
-            },
-            {
-              title: "Béton poli",
-              desc: "Finition lisse et brillante style contemporain.",
-              img: "/beton-poli.jpg",
-            },
-            {
-              title: "Béton bouchardé",
-              desc: "Aspect texturé et antiglisse très résistant.",
-              img: "/beton-boucharde.jpg",
-            },
-            {
-              title: "Béton coloré",
-              desc: "Teintes personnalisées selon votre projet.",
-              img: "/beton-colore.jpg",
-            },
-          ].map((item, i) => (
-            <div
+      <section className="py-28 px-6 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+          className="mb-16 text-center"
+        >
+          <p className="uppercase tracking-[0.3em] text-[#C8A96B] text-sm mb-4">
+            Réalisations
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-semibold mb-6">
+            Des réalisations pensées pour durer
+          </h2>
+
+          <p className="text-gray-400 max-w-3xl text-lg mx-auto">
+            Chaque projet est conçu avec une attention particulière aux détails,
+            à la durabilité et au rendu esthétique.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {realisations.map((img, i) => (
+            <motion.div
               key={i}
-              className="group overflow-hidden rounded-xl border border-white/10 hover:border-[#C8A96B] transition"
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: i * 0.2 }}
+              viewport={{ once: false }}
+              className="overflow-hidden rounded-3xl border border-white/10 group"
             >
-              {/* IMAGE */}
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
-              </div>
-
-              {/* TEXTE */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-[#C8A96B]">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-300 text-sm">{item.desc}</p>
-              </div>
-            </div>
+              <img
+                src={img}
+                alt=""
+                className="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700"
+              />
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* ================= FORMULAIRE ================= */}
-      <section id="devis" className="py-20 px-6 bg-[#111]">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-[#C8A96B] uppercase tracking-[0.3em] text-sm mb-4">
-              Demande de devis
+      {/* ================= SERVICES ================= */}
+
+      <section className="py-28 px-6 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: false }}
+            className="mb-20 text-center"
+          >
+            <p className="uppercase tracking-[0.3em] text-[#C8A96B] text-sm mb-4">
+              Nos services
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-semibold mb-4">
+            <h2 className="text-4xl md:text-6xl font-semibold mb-6">
+              Nos types de béton décoratif
+            </h2>
+
+            <p className="text-gray-400 max-w-3xl text-lg mx-auto">
+              Des solutions modernes et durables adaptées aux villas, piscines,
+              terrasses et espaces architecturaux.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                viewport={{ once: false }}
+                className="group overflow-hidden rounded-3xl border border-white/10 hover:border-[#C8A96B] transition bg-black"
+              >
+                <div className="h-64 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                  />
+                </div>
+
+                <div className="p-8">
+                  <h3 className="text-2xl font-semibold mb-4 text-[#C8A96B]">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FORMULAIRE ================= */}
+
+      <section
+        id="devis"
+        className="py-28 px-6 bg-gradient-to-b from-[#0d0d0d] to-black"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+          className="max-w-3xl mx-auto"
+        >
+          {/* LOGO ART DU BETON */}
+          <div className="flex justify-center mb-10">
+            <img
+              src="/logo-art-du-beton.jpg"
+              alt="Logo Art du Béton"
+              className="w-52 md:w-64 object-contain rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+            />
+          </div>
+
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-6xl font-semibold mb-6">
               Parlons de votre projet
             </h2>
 
-            <p className="text-gray-400">
-              Décrivez votre projet et recevez une étude personnalisée.
+            <p className="text-gray-400 text-lg">
+              Recevez une étude personnalisée pour votre projet.
             </p>
           </div>
 
-          <form
-            className="space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-
-              const form = e.target as HTMLFormElement;
-
-              const nom = (form.elements.namedItem("nom") as HTMLInputElement)
-                .value;
-
-              const tel = (form.elements.namedItem("tel") as HTMLInputElement)
-                .value;
-
-              const email = (
-                form.elements.namedItem("email") as HTMLInputElement
-              ).value;
-
-              const message = (
-                form.elements.namedItem("message") as HTMLTextAreaElement
-              ).value;
-
-              window.location.href =
-                `mailto:contact@artdubeton.re` +
-                `?subject=Demande de devis - ${nom}` +
-                `&body=Nom: ${nom}%0D%0A` +
-                `Téléphone: ${tel}%0D%0A` +
-                `Email: ${email}%0D%0A%0D%0A` +
-                `Projet:%0D%0A${message}`;
-            }}
-          >
+          <form className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl space-y-6">
             <input
               type="text"
-              name="nom"
               placeholder="Votre nom"
-              required
-              className="w-full bg-black border border-white/10 p-4 rounded-xl text-white"
+              className="w-full bg-black/60 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#C8A96B]"
             />
 
             <input
               type="text"
-              name="tel"
               placeholder="Votre téléphone"
-              required
-              className="w-full bg-black border border-white/10 p-4 rounded-xl text-white"
+              className="w-full bg-black/60 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#C8A96B]"
             />
 
             <input
               type="email"
-              name="email"
               placeholder="Votre email"
-              required
-              className="w-full bg-black border border-white/10 p-4 rounded-xl text-white"
+              className="w-full bg-black/60 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#C8A96B]"
             />
 
             <textarea
-              name="message"
               rows={6}
               placeholder="Décrivez votre projet..."
-              className="w-full bg-black border border-white/10 p-4 rounded-xl text-white"
+              className="w-full bg-black/60 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#C8A96B]"
             />
 
             <button
               type="submit"
-              className="w-full bg-[#C8A96B] hover:bg-[#D6B97A] transition text-black font-semibold py-4 rounded-xl"
+              className="w-full bg-[#C8A96B] hover:bg-[#d8ba7d] transition text-black font-semibold py-5 rounded-2xl"
             >
               Envoyer ma demande
             </button>
           </form>
-        </div>
+        </motion.div>
       </section>
     </main>
   );
