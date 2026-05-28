@@ -90,7 +90,11 @@ const communes = [
 
 const scrollVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
+  },
 };
 
 const cardVariants = {
@@ -98,7 +102,11 @@ const cardVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.05, ease: "easeOut" },
+    transition: {
+      duration: 0.5,
+      delay: i * 0.05,
+      ease: [0.25, 0.1, 0.25, 1] as const,
+    },
   }),
 };
 
@@ -107,7 +115,7 @@ const scaleVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
